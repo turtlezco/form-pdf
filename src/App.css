@@ -1,0 +1,182 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+
+.toolbar {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 10px;
+}
+
+.toolbar h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+
+.layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: row; 
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  
+  overflow-x: auto; 
+  padding-bottom: 20px;
+  width: 100%; 
+}
+
+.form-card {
+  width: 100%;
+  max-width: 500px; 
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+  background-color: white;
+
+  position: sticky;
+  top: 20px;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  padding: 24px;
+  text-align: center;
+  color: white;
+}
+
+.form-header h2 { margin: 0; font-size: 1.5rem; }
+.form-header p { margin: 5px 0 0 0; opacity: 0.8; font-size: 0.9rem; }
+
+.form-body {
+  padding: 32px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form-divider hr { flex-grow: 1; border-color: #e2e8f0; }
+
+.signature-section {
+  background-color: #f8fafc;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-top: 32px;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #475569;
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  
+}
+
+
+.technician-input { margin-bottom: 24px !important; }
+.signature-pads { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+
+.signature-canvas {
+  width: 100% !important;
+  height: 150px !important;
+
+  touch-action: none; 
+  display: block;
+}
+
+
+@media (max-width: 1100px) {
+  .layout {
+    
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .form-card {
+    max-width: 100%; 
+    position: static; 
+  }
+
+  .preview-container {
+    justify-content: flex-start; 
+  }
+}
+
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px; 
+  }
+
+  .toolbar {
+    flex-direction: column; 
+    text-align: center;
+  }
+
+  .form-body {
+    padding: 20px !important; 
+  }
+
+  
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+
+  .form-header h2 { font-size: 1.2rem; }
+}
