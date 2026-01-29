@@ -109,11 +109,9 @@ body {
 .form-divider hr { flex-grow: 1; border-color: #e2e8f0; }
 
 .signature-section {
-  background-color: #f8fafc;
-  padding: 24px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
   margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
 }
 
 .section-title {
@@ -128,7 +126,7 @@ body {
 
 
 .technician-input { margin-bottom: 24px !important; }
-.signature-pads { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+.signature-pads { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
 
 .signature-canvas {
   width: 100% !important;
