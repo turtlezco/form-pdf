@@ -30,197 +30,186 @@ export default function Form({ data, setData }) {
     };
 
     return (
-        <Card className="form-card" elevation={0}>
+        <CardContent className="form-body">
 
-            {/* ENCABEZADO */}
-            <div className="form-header">
-                <h2>Orden de Servicio</h2>
-                <p>Complete los datos para generar el reporte</p>
-            </div>
+  {/* ===================== */}
+  {/* SECCIÓN: FUNCIONARIO */}
+  {/* ===================== */}
+  <div className="form-divider">
+    <Divider />
+    <span>Datos del Funcionario</span>
+    <Divider />
+  </div>
 
-            <CardContent className="form-body">
+  <div className="form-group">
+    <TextField
+      label="Nombre del Funcionario"
+      name="funcionarioNombre"
+      value={data.funcionarioNombre}
+      onChange={handleChange}
+      fullWidth
+    />
+    
+    <TextField
+      label="Cedula al funcionario"
+      name="funcionarioCedula"
+      value={data.funcionarioCedula}
+      onChange={handleChange}
+      fullWidth
+    />
 
-                {/* GRUPO: DATOS DEL CLIENTE */}
-                <div className="form-group">
-                    <TextField
-                        label="Funcionario"
-                        name="funcionarioNombre"
-                        value={data.funcionarioNombre}
-                        onChange={handleChange}
-                        fullWidth
-                    />
+    <TextField
+      label="Dirección"
+      name="direccion"
+      value={data.direccion}
+      onChange={handleChange}
+      fullWidth
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <HomeIcon className="form-icon" />
+          </InputAdornment>
+        ),
+      }}
+    />
+  </div>
 
-                    
-                    <TextField
-                        label="Dirección"
-                        name="direccion"
-                        value={data.direccion}
-                        onChange={handleChange}
-                        variant="outlined"
-                        fullWidth
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><HomeIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                </div>
+  <div className="form-row">
+    <TextField
+      label="Teléfono"
+      name="telefono"
+      value={data.telefono}
+      onChange={handleChange}
+      fullWidth
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <PhoneIcon className="form-icon" />
+          </InputAdornment>
+        ),
+      }}
+    />
 
-                {/* GRUPO: TELÉFONO Y ORDEN (En fila) */}
-                <div className="form-row">
-                    <TextField
-                        label="Teléfono"
-                        name="telefono"
-                        value={data.telefono}
-                        onChange={handleChange}
-                        fullWidth
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><PhoneIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                    <TextField
-                        label="N° Orden"
-                        name="orden"
-                        type="number"
-                        value={data.orden}
-                        onChange={handleChange}
-                        fullWidth
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><ConfirmationNumberIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                </div>
+    <TextField
+      label="N° Orden"
+      name="orden"
+      value={data.orden}
+      onChange={handleChange}
+      fullWidth
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <ConfirmationNumberIcon className="form-icon" />
+          </InputAdornment>
+        ),
+      }}
+    />
+  </div>
 
-                {/* GRUPO: FECHA Y HORA (En fila) */}
-                <div className="form-row">
-                    <TextField
-                        label="Fecha"
-                        type="date"
-                        name="fecha"
-                        value={data.fecha}
-                        onChange={handleChange}
-                        fullWidth
-                        InputLabelProps={{ shrink: true }}
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><CalendarTodayIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                    <TextField
-                        label="Hora"
-                        type="time"
-                        name="hora"
-                        value={data.hora}
-                        onChange={handleChange}
-                        fullWidth
-                        InputLabelProps={{ shrink: true }}
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><AccessTimeIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                </div>
+  <div className="form-row">
+    <TextField
+      label="Fecha"
+      type="date"
+      name="fecha"
+      value={data.fecha}
+      onChange={handleChange}
+      fullWidth
+      InputLabelProps={{ shrink: true }}
+    />
 
-                {/* SEPARADOR */}
-                <div className="form-divider">
-                    <Divider />
-                    <span>Detalles Técnicos</span>
-                    <Divider />
-                </div>
+    <TextField
+      label="Hora"
+      type="time"
+      name="hora"
+      value={data.hora}
+      onChange={handleChange}
+      fullWidth
+      InputLabelProps={{ shrink: true }}
+    />
+  </div>
 
-                {/* GRUPO: TEXTAREAS */}
-                <div className="form-group">
-                    <TextField
-                        label="Acciones Realizadas"
-                        name="acciones"
-                        value={data.acciones}
-                        onChange={handleChange}
-                        multiline
-                        minRows={1}
-                        maxRows={8}
-                        fullWidth
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment
-                                    position="start"
-                                    sx={{ alignSelf: "flex-start", mt: 1 }}
-                                >
-                                    <BuildIcon className="form-icon" />
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
+  <div className="form-group">
+    <TextField
+      label="Acciones Realizadas"
+      name="acciones"
+      value={data.acciones}
+      onChange={handleChange}
+      multiline
+      minRows={1}
+      maxRows={8}
+      fullWidth
+    />
+
+    <TextField
+      label="Recomendaciones"
+      name="recomendaciones"
+      value={data.recomendaciones}
+      onChange={handleChange}
+      multiline
+      minRows={1}
+      maxRows={8}
+      fullWidth
+    />
+  </div>
+
+  {/* FIRMA FUNCIONARIO */}
+  <div className="signature-pads">
+    <SignaturePad
+      label="Firma del Funcionario"
+      onSave={(img) => setData({ ...data, FuncionarioFirma: img })}
+    />
+  </div>
+
+  {/* ===================== */}
+{/* SECCIÓN: TÉCNICO */}
+{/* ===================== */}
+<div className="form-divider">
+  <Divider />
+  <span>Datos del Técnico</span>
+  <Divider />
+</div>
+
+<div className="form-group">
+  <TextField
+    label="Nombre del Técnico"
+    name="tecnicoNombre"
+    value={data.tecnicoNombre}
+    onChange={handleChange}
+    fullWidth
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <EngineeringIcon className="form-icon" />
+        </InputAdornment>
+      ),
+    }}
+  />
+
+  <TextField
+    label="C.C Técnico"
+    name="tecnicoCedula"
+    value={data.tecnicoCedula}
+    onChange={handleChange}
+    fullWidth
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <BadgeIcon className="form-icon" />
+        </InputAdornment>
+      ),
+    }}
+  />
+</div>
+
+<div className="signature-pads">
+  <SignaturePad
+    label="Firma del Técnico"
+    onSave={(img) => setData({ ...data, tecnicoFirma: img })}
+  />
+</div>
 
 
-                    <TextField
-                        label="Recomendaciones"
-                        name="recomendaciones"
-                        value={data.recomendaciones}
-                        onChange={handleChange}
-                        multiline
-                        minRows={1}
-                        maxRows={8}
-                        fullWidth
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment
-                                    position="start"
-                                    sx={{ alignSelf: "flex-start", mt: 2 }}
-                                >
-                                    <AssignmentIcon className="form-icon" />
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
+</CardContent>
 
-                </div>
-
-                {/* GRUPO: FIRMAS (Contenedor gris) */}
-                <div className="signature-section">
-                    <div className="section-title">VALIDACIÓN Y FIRMAS</div>
-
-
-                    <div className="form-row">
-                        <TextField
-                            label="CC tecnico"
-                            name="tecnicoCedula"
-                            value={data.tecnicoCedula}
-                            onChange={handleChange}
-                            fullWidth
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <BadgeIcon className="form-icon" />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-
-                        <TextField
-                            label="Nombre del tecnico"
-                            name="tecnicoNombre"
-                            value={data.tecnicoNombre}
-                            onChange={handleChange}
-                            fullWidth
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <EngineeringIcon className="form-icon" />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-                    </div>
-
-                    <div className="signature-pads">
-                        <SignaturePad
-                            label="Firma del Funcionario"
-                            onSave={(img) => setData({ ...data, FuncionarioFirma: img })}
-                        />
-                        <SignaturePad
-                            label="Firma del Técnico"
-                            onSave={(img) => setData({ ...data, tecnicoFirma: img })}
-                        />
-                    </div>
-                </div>
-
-            </CardContent>
-        </Card>
     );
 }

@@ -8,6 +8,7 @@ import GeneratePdfButton from "./components/GeneratePdfButton";
 function App() {
   const [data, setData] = useState({
     funcionarioNombre: "",
+    funcionarioCedula:"",
     direccion: "",
     telefono: "",
     orden: "",
