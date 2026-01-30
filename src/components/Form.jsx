@@ -44,6 +44,20 @@ export default function Form({ data, setData }) {
             <div className="form-group">
                 <TextField
                     label="Nombre del cliente"
+                    name="clienteNombre"
+                    value={data.clienteNombre}
+                    onChange={handleChange}
+                    fullWidth
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <PersonIcon className="form-icon" />
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+                <TextField
+                    label="Nombre del funcionario"
                     name="funcionarioNombre"
                     value={data.funcionarioNombre}
                     onChange={handleChange}
@@ -56,6 +70,7 @@ export default function Form({ data, setData }) {
                         ),
                     }}
                 />
+            
 
 
                 <TextField

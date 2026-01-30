@@ -26,7 +26,7 @@ export default function PdfPreview({ data }) {
             {/* DATOS */}
             <div className="datos">
                 <div className="datos-izq">
-                    <div className="linea"><strong>Funcionario:</strong> {data.funcionarioNombre}</div>
+                    <div className="linea"><strong>Nombre del Cliente:</strong> {data.clienteNombre}</div>
                     <div className="linea"><strong>Dirección:</strong> {data.direccion}</div>
                     <div className="linea"><strong>Teléfono:</strong> {data.telefono}</div>
                 </div>
