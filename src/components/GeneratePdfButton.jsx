@@ -2,13 +2,13 @@ import { Button } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import html2pdf from "html2pdf.js";
 
-export default function GeneratePdfButton() {
+export default function GeneratePdfButton({ orden }) {
   const generarPDF = () => {
     const element = document.getElementById("pdf");
 
     const options = {
       margin: 0,
-      filename: "orden-servicio.pdf",
+      filename: `orden-servicio-${orden}.pdf`,
       image: {
         type: "jpeg",
         quality: 0.98,

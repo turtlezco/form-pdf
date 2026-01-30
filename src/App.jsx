@@ -31,7 +31,7 @@ function App() {
 
       <div className="toolbar">
         <h1>Generador de Reportes</h1>
-        <GeneratePdfButton></GeneratePdfButton>
+        <GeneratePdfButton orden={data.orden}></GeneratePdfButton>
       </div>
 
 
