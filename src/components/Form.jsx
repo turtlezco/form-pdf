@@ -43,7 +43,7 @@ export default function Form({ data, setData }) {
 
   <div className="form-group">
     <TextField
-      label="Nombre del Funcionario"
+      label="Nombre del cliente"
       name="funcionarioNombre"
       value={data.funcionarioNombre}
       onChange={handleChange}

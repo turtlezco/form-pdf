@@ -69,7 +69,7 @@ export default function PdfPreview({ data }) {
 
 
                     <div className="firma-info">
-                        <div><strong>Nombre:</strong> {data.funcionarioNombre}</div>
+                        <div><strong>Nombre del cliente:</strong> {data.funcionarioNombre}</div>
                         <div><strong>Cedula al funcionario:</strong> {data.funcionarioCedula}</div>
                             
                     </div>
