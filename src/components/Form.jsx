@@ -30,7 +30,7 @@ export default function Form({ data, setData }) {
     };
 
     return (
-        <Card className="form-card">
+        <Card className="form-card" elevation={0}>
 
             {/* ENCABEZADO */}
             <div className="form-header">
@@ -43,35 +43,14 @@ export default function Form({ data, setData }) {
                 {/* GRUPO: DATOS DEL CLIENTE */}
                 <div className="form-group">
                     <TextField
-                        label="Cliente"
-                        name="cliente"
-                        value={data.cliente}
-                        onChange={handleChange}
-                        variant="outlined"
-                        fullWidth
-                        InputProps={{
-                            startAdornment: <InputAdornment position="start"><PersonIcon className="form-icon" /></InputAdornment>,
-                        }}
-                    />
-                    <TextField
-                        label="CC Cliente"
-                        name="cedula"
-                        value={data.cedula}
+                        label="Funcionario"
+                        name="funcionarioNombre"
+                        value={data.funcionarioNombre}
                         onChange={handleChange}
                         fullWidth
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <BadgeIcon className="form-icon" />
-                                </InputAdornment>
-                            ),
-                        }}
                     />
 
-
-
-
-
+                    
                     <TextField
                         label="Dirección"
                         name="direccion"
@@ -199,9 +178,9 @@ export default function Form({ data, setData }) {
 
                     <div className="form-row">
                         <TextField
-                            label="CC Funcionario"
-                            name="funcionarioCedula"
-                            value={data.funcionarioCedula}
+                            label="CC tecnico"
+                            name="tecnicoCedula"
+                            value={data.tecnicoCedula}
                             onChange={handleChange}
                             fullWidth
                             InputProps={{
@@ -214,9 +193,9 @@ export default function Form({ data, setData }) {
                         />
 
                         <TextField
-                            label="Nombre del Funcionario"
-                            name="funcionarioNombre"
-                            value={data.funcionarioNombre}
+                            label="Nombre del tecnico"
+                            name="tecnicoNombre"
+                            value={data.tecnicoNombre}
                             onChange={handleChange}
                             fullWidth
                             InputProps={{
@@ -231,12 +210,12 @@ export default function Form({ data, setData }) {
 
                     <div className="signature-pads">
                         <SignaturePad
-                            label="Firma del Cliente"
-                            onSave={(img) => setData({ ...data, firmaCliente: img })}
+                            label="Firma del Funcionario"
+                            onSave={(img) => setData({ ...data, FuncionarioFirma: img })}
                         />
                         <SignaturePad
                             label="Firma del Técnico"
-                            onSave={(img) => setData({ ...data, firmaFuncionario: img })}
+                            onSave={(img) => setData({ ...data, tecnicoFirma: img })}
                         />
                     </div>
                 </div>

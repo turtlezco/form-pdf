@@ -126,7 +126,7 @@ body {
 
 
 .technician-input { margin-bottom: 24px !important; }
-.signature-pads { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.signature-pads { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
 
 .signature-canvas {
   width: 100% !important;

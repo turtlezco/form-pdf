@@ -26,7 +26,7 @@ export default function PdfPreview({ data }) {
             {/* DATOS */}
             <div className="datos">
                 <div className="datos-izq">
-                    <div className="linea"><strong>Cliente:</strong> {data.cliente}</div>
+                    <div className="linea"><strong>Funcionario:</strong> {data.funcionarioNombre}</div>
                     <div className="linea"><strong>Dirección:</strong> {data.direccion}</div>
                     <div className="linea"><strong>Teléfono:</strong> {data.telefono}</div>
                 </div>
@@ -55,39 +55,41 @@ export default function PdfPreview({ data }) {
 
             <div className="firmas">
 
-                {/* FIRMA CLIENTE */}
+                {/* FIRMA funcionario */}
                 <div className="firma-box">
-                    <strong>Firma Cliente:</strong>
+                    <strong>Firma funcionario:</strong>
 
-                    {data.firmaCliente && (
+                    {data.FuncionarioFirma && (
                         <img
-                            src={data.firmaCliente}
-                            alt="Firma Cliente"
-                            className="firma-img"
-                        />
-                    )}
-
-                    <div className="firma-info">
-                        <div><strong>Nombre:</strong> {data.cliente}</div>
-                        <div><strong>C.C:</strong> {data.cedula}</div>
-                    </div>
-                </div>
-
-                {/* FIRMA FUNCIONARIO */}
-                <div className="firma-box">
-                    <strong>Firma Funcionario:</strong>
-
-                    {data.firmaFuncionario && (
-                        <img
-                            src={data.firmaFuncionario}
+                            src={data.FuncionarioFirma}
                             alt="Firma Funcionario"
                             className="firma-img"
                         />
                     )}
 
+
                     <div className="firma-info">
                         <div><strong>Nombre:</strong> {data.funcionarioNombre}</div>
-                        <div><strong>C.C:</strong> {data.funcionarioCedula}</div>
+                            
+                    </div>
+                </div>
+
+                {/* FIRMA Tecnico */}
+                <div className="firma-box">
+                    <strong>Firma Tecnico:</strong>
+
+                    {data.tecnicoFirma && (
+                        <img
+                            src={data.tecnicoFirma}
+                            alt="Firma Técnico"
+                            className="firma-img"
+                        />
+                    )}
+
+
+                    <div className="firma-info">
+                        <div><strong>Nombre:</strong> {data.tecnicoNombre}</div>
+                        <div><strong>C.C:</strong> {data.tecnicoCedula}</div>
                     </div>
                 </div>
 
