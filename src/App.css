@@ -50,7 +50,6 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
-  
   overflow-x: auto; 
   padding-bottom: 20px;
   width: 100%; 
@@ -176,7 +175,7 @@ body {
   }
 
   .preview-container {
-    justify-content: flex-start; 
+    justify-content: center; 
   }
 }
 
