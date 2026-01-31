@@ -2,28 +2,16 @@ import { Button } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import html2pdf from "html2pdf.js";
 
-export default function GeneratePdfButton() {
+export default function GeneratePdfButton({ disabled }) {
   const generarPDF = () => {
     const element = document.getElementById("pdf");
 
     const options = {
       margin: 0,
       filename: "orden-servicio.pdf",
-      image: {
-        type: "jpeg",
-        quality: 0.98,
-      },
-      html2canvas: {
-        scale: 2,
-        scrollX: 0,
-        scrollY: 0,
-        useCORS: true,
-      },
-      jsPDF: {
-        unit: "mm",
-        format: "a4",
-        orientation: "portrait",
-      },
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
 
     html2pdf().set(options).from(element).save();
@@ -36,6 +24,7 @@ export default function GeneratePdfButton() {
       color="primary"
       startIcon={<PictureAsPdfIcon />}
       onClick={generarPDF}
+      disabled={disabled}
     >
       Generar PDF
     </Button>
