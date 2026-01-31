@@ -44,7 +44,10 @@ function App() {
       <div className="toolbar">
         <h1>Generador de Reportes</h1>
 
-        <GeneratePdfButton disabled={!isFormComplete()} />
+        <GeneratePdfButton
+          disabled={!isFormComplete()}
+          orden={data.orden}
+        />
 
         {!isFormComplete() && (
           <p className="form-warning">
