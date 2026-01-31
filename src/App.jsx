@@ -49,11 +49,7 @@ function App() {
           orden={data.orden}
         />
 
-        {!isFormComplete() && (
-          <p className="form-warning">
-            Completa todos los campos para descargar el PDF
-          </p>
-        )}
+       
       </div>
 
       <div className="layout">
